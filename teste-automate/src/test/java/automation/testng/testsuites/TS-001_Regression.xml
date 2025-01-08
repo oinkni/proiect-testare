@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo - Swag Labs">
+    <test name="Regression" parallel="classes" thread-count="10">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="automation.testng.testcases.TC001_AddToCart_Checkout"></class>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
