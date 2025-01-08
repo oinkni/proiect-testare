@@ -1,0 +1,57 @@
+/* Stilizare pentru container-ul cu formularul de conversie si rezultat */
+.container {
+    display: flex; /*Adauga layout flexibil*/
+    gap: 20px; /*Adauga spatiere intre elementele din container*/
+    margin-top: 20px; /*Adauga spatiu intre container si formularul pentru selectarea limbii*/
+}
+
+/*Stilizare pentru formular */
+form {
+    display: flex; /*Adauga layout flexibil*/
+    flex-direction: column; /*Pune elementele in coloana*/
+    max-width: 300px; /*Latimea maxima a formularului*/
+    border: 2px solid blue; /*Adauga bordura albastra de 2px*/
+    padding: 15px; /*Spatiere interioara*/
+    border-radius: 10px; /*Rotunjeste colturile bordurii*/
+    background-color: #f9f9f9; /*Adauga fundal gri*/
+}
+
+/*Stilizare pentru etichete*/
+label {
+    margin-bottom: 5px; /*Adauga spatiere intre eticheta si urmatorul element*/
+}
+
+/*Stilizare pentru campurile de text si meniurile derulante*/
+input[type="text"], select {
+    margin-bottom: 15px; /*Seteaza spatiul dintre campuri*/
+    width: 100%; /*Seteaza latimea formularului*/
+    box-sizing: border-box; /*Include marginile si padding-ul in latime*/
+}
+
+/*Stilizare pentru butonul de submit*/
+form input[type="submit"] {
+    background-color: #4CAFEE; /*Seteaza funal albastru deschis*/
+    color: white; /*Seteaza textul sa fie alb*/
+    padding: 10px; /*Spatiere interioara*/
+    border: none; /*Elimina marginile impicite*/
+    cursor: pointer; /*Adauga un cursor de mana*/
+    border-radius: 5px; /*Rotunjeste colturile butonului*/
+    transition: background-color 0.3s ease; /*Adauga un efect de tranzitie pentru schimbarea culorii*/
+}
+
+/*Stilizare pentru butonul de submit la trecerea mouse-ului*/
+form input[type="submit"]:hover {
+    background-color: #39A0D1; /*Schimba fundalul butonului la o nuanta mai inchisa*/
+}
+
+/*Stilizare pentru caseta de rezultat*/
+.result-box {
+    padding: 15px; /*Spatiere interioara*/
+    border: 2px solid blue; /*Adauga bordura albastra de 2px*/
+    border-radius: 10px; /*Rotunjeste colturile bordurii*/
+    background-color: #f9f9f9; /*Adauga fundal gri*/
+    width: 250px; /*Seteaza latimea*/
+    height: 180px; /*Seteaza inaltimea */
+    box-sizing: border-box; /*Include marginile si padding-ul in dimensiuni*/
+    overflow-y: auto; /*Permite derularea rezultatului daca depaseste inaltimea*/
+}
