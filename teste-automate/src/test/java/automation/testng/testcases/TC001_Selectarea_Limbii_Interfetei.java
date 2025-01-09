@@ -5,7 +5,7 @@ import automation.contexts.CheckoutYourInfoData;
 import automation.pages.LoginPage;
 import automation.pages.ProductsPage;
 
-public class TC001_AddToCart_Checkout extends BaseTest {
+public class TC001_Selectarea_Limbii_Interfetei extends BaseTest {
     String dtUsername = "standard_user";
     String dtPassword = "secret_sauce";
 

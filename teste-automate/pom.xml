@@ -27,7 +27,13 @@
                     <!-- Default test runs -->
                     <suiteXmlFiles>
                         <suiteXmlFile>
-                           ${suiteXmlFileDir}TS-001_Regression.xml
+                            ${suiteXmlFileDir}TS-001_Regresie.xml
+                        </suiteXmlFile>
+                        <suiteXmlFile>
+                            ${suiteXmlFileDir}TS-002_Firefox.xml
+                        </suiteXmlFile>
+                        <suiteXmlFile>
+                            ${suiteXmlFileDir}TS-003_Performanta.xml
                         </suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>

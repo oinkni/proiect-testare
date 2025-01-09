@@ -40,5 +40,5 @@ This project contains 4 sample test cases that demonstrate how to use Selenium t
    ```sh
    mvn test -DsuiteXmlFiles=<test_plan>
    ```
-   E.g. `mvn test -DsuiteXmlFiles=src/test/java/automation/tests/testng/testsuites/TS-001_Regression.xml`
+   E.g. `mvn test -DsuiteXmlFiles=src/test/java/automation/tests/testng/testsuites/TS-001_Regression`
 

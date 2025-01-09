@@ -14,7 +14,7 @@ public abstract class BaseTest {
 
     protected WebDriver driver;
     private Browsers browser = Browsers.CHROME;
-    private String url = "https://www.saucedemo.com/";
+    private String url = "http://localhost/ProiectTestare";
 
     @BeforeMethod
     @Parameters("browser")

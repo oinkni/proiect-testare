@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FSEGA Testare">
+    <test name="Firefox_Suite" parallel="classes" thread-count="10">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="automation.testng.testcases.TC002_Existentei_Optiunilor_Valutare"></class>
+            <class name="automation.testng.testcases.TC003_Conversie_Valutara_Corecta"></class>
+            <class name="automation.testng.testcases.TC006_Conversie_Valori_Negative"></class>
+            <class name="automation.testng.testcases.TC008_Accesibilitate"></class>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
