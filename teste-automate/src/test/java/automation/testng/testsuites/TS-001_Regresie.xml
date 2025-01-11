@@ -1,15 +1,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="FSEGA Testare">
-    <test name="Chrome_Suite" parallel="classes" thread-count="10">
-        <parameter name="browser" value="chrome" />
+<suite name="Regression testing - in Chrome">
+    <test name="Localizare aplicatie" >
+        <parameter name="browser" value="Chrome" />
         <classes>
             <class name="automation.testng.testcases.TC001_Selectarea_Limbii_Interfetei"></class>
-            <class name="automation.testng.testcases.TC002_Existentei_Optiunilor_Valutare"></class>
-            <class name="automation.testng.testcases.TC003_Conversie_Valutara_Corecta"></class>
-            <class name="automation.testng.testcases.TC004_Validare_Date_Introduse"></class>
-            <class name="automation.testng.testcases.TC005_Conversie_Neaplicata"></class>
-            <class name="automation.testng.testcases.TC006_Conversie_Valori_Negative"></class>
             <class name="automation.testng.testcases.TC008_Accesibilitate"></class>
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+    <test name="Conversii">
+        <parameter name="browser" value="Chrome" />
+        <classes>
+            <class name="automation.testng.testcases.TC002_Existentei_Optiunilor_Valutare"></class>
+            <class name="automation.testng.testcases.TC003_Conversie_Valutara_Corecta"></class>
+            <class name="automation.testng.testcases.TC005_Conversie_Neaplicata"></class>
+            <class name="automation.testng.testcases.TC006_Conversie_Valori_Negative"></class>
+        </classes>
+    </test>
+    <test name="Validari">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="automation.testng.testcases.TC004_Validare_Date_Introduse"></class>
+        </classes>
+    </test>
+</suite>

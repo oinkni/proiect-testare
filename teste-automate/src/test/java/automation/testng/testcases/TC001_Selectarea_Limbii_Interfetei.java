@@ -1,29 +1,43 @@
 package automation.testng.testcases;
 
+import automation.contexts.AppTexts;
+import automation.enums.Currency;
+import automation.enums.Language;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import automation.contexts.CheckoutYourInfoData;
-import automation.pages.LoginPage;
-import automation.pages.ProductsPage;
+
+import static automation.enums.Language.*;
+import static org.testng.Assert.assertEquals;
 
 public class TC001_Selectarea_Limbii_Interfetei extends BaseTest {
-    String dtUsername = "standard_user";
-    String dtPassword = "secret_sauce";
 
-    String prod1 = "Sauce Labs Onesie";
-    String prod2 = "Test.allTheThings() T-Shirt (Red)";
+    @Test(dataProvider = "languageEnumProvider")
+    public void TC001_Selectarea_Limbii_Interfetei(Language language) {
+        mainPage.selectLanguage(language.getDisplayName());
+        assertEquals(language.getDisplayName(), mainPage.getSelectedLanguage(), "Limba selectata nu este aleasa dupa reincarcarea paginii.");
 
-    @Test
-    public void TC001_AddToCart_Checkout() {
-        CheckoutYourInfoData dtYourInfo = new CheckoutYourInfoData();
-        dtYourInfo.setFirstName("John");
-        dtYourInfo.setLastName("Doe");
-        dtYourInfo.setZip("3000");
+        AppTexts expectedTexts = AppTexts.loadFor(language);
+        checkLabelsAreCorrect(expectedTexts);
 
-        new LoginPage(driver).login(dtUsername, dtPassword);
-        new ProductsPage(driver)
-                .add(prod1)
-                .add(prod2);
+        mainPage.convertAmount(Currency.RON, Currency.EUR, "1");
+        assertEquals(mainPage.getResult(), expectedTexts.getResultExample(), "Rezultatul este tradus incorect.");
+        
+        checkLabelsAreCorrect(expectedTexts);
+    }
 
-//        Assert.assertTrue(pgCheckout.isCheckoutComplete());
+    @DataProvider(name = "languageEnumProvider")
+    public Object[][] provideEnums() {
+        return new Object[][]{
+                {EN},
+                {FR},
+                {HU},
+                {RO}
+        };
+    }
+
+    private void checkLabelsAreCorrect(AppTexts expectedTexts) {
+        assertEquals(expectedTexts.getCurrencyALabel(), mainPage.getCurrencyALabel(), "Eticheta pentru valuta sursa este incorecta.");
+        assertEquals(expectedTexts.getCurrencyBLabel(), mainPage.getCurrencyBLabel(), "Eticheta pentru valuta tinta este incorecta.");
+        assertEquals(expectedTexts.getAmountLabel(), mainPage.getAmountLabel(), "Eticheta pentru suma este incorecta.");
     }
 }

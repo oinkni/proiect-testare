@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="FSEGA Testare">
-    <test name="Performanta_Suite">
-        <parameter name="browser" value="chrome"/>
+<suite name="Test de Performanta" parallel="methods" thread-count="10">
+    <test name="Timp de raspuns">
+        <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="automation.testng.testcases.TC007_Performanta"></class>
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+</suite>

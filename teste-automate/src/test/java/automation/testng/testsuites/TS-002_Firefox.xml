@@ -1,12 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="FSEGA Testare">
-    <test name="Firefox_Suite" parallel="classes" thread-count="10">
-        <parameter name="browser" value="firefox" />
+<suite name="Compatibilitate Firefox">
+    <test name="Localizare aplicatie">
+        <parameter name="browser" value="Firefox" />
+        <classes>
+            <class name="automation.testng.testcases.TC008_Accesibilitate"></class>
+        </classes>
+    </test>
+    <test name="Conversii">
+        <parameter name="browser" value="Firefox" />
         <classes>
             <class name="automation.testng.testcases.TC002_Existentei_Optiunilor_Valutare"></class>
             <class name="automation.testng.testcases.TC003_Conversie_Valutara_Corecta"></class>
             <class name="automation.testng.testcases.TC006_Conversie_Valori_Negative"></class>
-            <class name="automation.testng.testcases.TC008_Accesibilitate"></class>
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+</suite>

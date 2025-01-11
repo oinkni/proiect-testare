@@ -40,7 +40,7 @@
         <br>
 
         <! -- Butonul pentru trimiterea formularului -->
-        <input type="submit" value="Send">
+        <input type="submit" value="Send" id="send">
     </form>
 
     <! -- Afisarea rezultatului conversiei -->

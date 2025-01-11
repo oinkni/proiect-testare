@@ -41,7 +41,7 @@
         <br>
 
         <! -- Butonul pentru trimiterea formularului -->
-        <input type="submit" value="Küldés">
+        <input type="submit" value="Küldés" id="send">
     </form>
 
     <! -- Afisarea rezultatului conversiei -->
