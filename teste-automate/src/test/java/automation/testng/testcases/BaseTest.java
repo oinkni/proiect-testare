@@ -12,6 +12,8 @@ import org.testng.annotations.Parameters;
 import java.time.Duration;
 
 import static automation.selenium.BrowserFactory.CHROME;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public abstract class BaseTest {
 
@@ -37,4 +39,12 @@ public abstract class BaseTest {
         driver.quit();
     }
 
+    protected void checkEquals(String actual, String expected) {
+        assertEquals(actual, expected, "Expected : '" + expected + "' but got '" + actual + "'");
+    }
+
+
+    protected void checkEndsWith(String actual, String expected) {
+        assertTrue(actual.endsWith(expected), "Expected to end with: '" + expected + "' but got '" + actual + "'");
+    }
 }

@@ -20,9 +20,9 @@ public class TC003_Conversie_Valutara_Corecta extends BaseTest {
 
         mainPage.convertAmount(currencyA, currencyB, amount);
 
-        Assert.assertTrue(
-                mainPage.getResult().endsWith(expectedConvertedAmount), "Conversia nu s-a efectuat corect.");
+        checkEndsWith(mainPage.getResult(), expectedConvertedAmount);
 
+        // verificare ca nu s-au schimbat valorile din formular la refresh
         assertEquals(mainPage.getSelectedCurrencyA(), currencyA, "Valuta sursa s-a schimbat la reincarcarea paginii");
         assertEquals(mainPage.getSelectedCurrencyB(), currencyA, "Valuta tinta s-a schimbat la reincarcarea paginii");
         assertEquals(mainPage.getSetAmount(), amount, "Valuta tinta s-a schimbat la reincarcarea paginii");
@@ -32,9 +32,9 @@ public class TC003_Conversie_Valutara_Corecta extends BaseTest {
     @DataProvider(name = "conversionCases")
     public Object[][] conversionCases() {
         return new Object[][]{
-                {RO, CAD, USD, "100", ""},
-                {RO, EUR, GBP, "100", ""},
-                {RO, RON, HUF, "100", ""}
+                {RO, CAD, USD, "100", "140 USD"},
+                {RO, EUR, GBP, "100", "84 GBP"},
+                {RO, RON, HUF, "100", "8175 HUF"}
         };
     }
 

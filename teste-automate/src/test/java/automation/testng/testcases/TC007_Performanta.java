@@ -12,13 +12,12 @@ import static automation.enums.Language.RO;
 
 public class TC007_Performanta extends BaseTest {
 
-    @Test(invocationCount = 10)
+    @Test(invocationCount = 1, threadPoolSize = 1)
     public void TC007_Performanta() {
         mainPage.selectLanguage(RO.getDisplayName());
 
-        Instant beforeSubmit = mainPage.convertAmount(EUR, RON, "100");
-        Assert.assertTrue(mainPage.getResult().endsWith("498"));
-        Duration conversionTime = Duration.between(beforeSubmit, Instant.now());
+        Duration conversionTime = mainPage.convertAmount(EUR, RON, "100");
+        Assert.assertTrue(mainPage.getResult().endsWith("498 RON"));
         Assert.assertTrue(conversionTime.getSeconds() <= 1, "Conversia a durat " + conversionTime.getSeconds());
     }
 

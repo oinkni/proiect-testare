@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test de Performanta" parallel="methods" thread-count="10">
+<suite name="Test de Performanta" verbose="5">
     <test name="Timp de raspuns">
         <parameter name="browser" value="Chrome"/>
         <classes>

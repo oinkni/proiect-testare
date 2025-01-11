@@ -19,16 +19,15 @@ public class TC006_Conversie_Valori_Negative extends BaseTest {
 
         mainPage.convertAmount(currencyA, currencyB, amount);
 
-        Assert.assertTrue(
-                mainPage.getResult().endsWith(expectedConvertedAmount), "Conversia nu s-a efectuat corect.");
+        checkEndsWith(mainPage.getResult(), expectedConvertedAmount);
     }
 
     @DataProvider(name = "conversionCases")
     public Object[][] conversionCases() {
         return new Object[][]{
-                {RO, USD, CAD, "-50", ""},
-                {RO, GBP, EUR, "-50", ""},
-                {RO, HUF, RON, "-50", ""}
+                {RO, USD, CAD, "-50", "-70 CAD"},
+                {RO, GBP, EUR, "-50", "-60 EUR"},
+                {RO, HUF, RON, "-50", "-0,6 RON"}
         };
     }
 

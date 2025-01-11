@@ -18,16 +18,22 @@ public class TC004_Validare_Date_Introduse extends BaseTest {
         mainPage.selectLanguage(language.getDisplayName());
         mainPage.convertAmount(currencyA, currencyB, amount);
 
-        assertEquals(mainPage.getResult(), expectedMessage, "Mesajul afisat nu este cel corect.");
+        checkEquals(mainPage.getErrorText(), expectedMessage);
     }
 
     @DataProvider(name = "conversionCases")
     public Object[][] conversionCases() {
         return new Object[][]{
-                {EN, CAD, USD, "100", ""},
-                {FR, CAD, USD, "100", ""},
-                {HU, CAD, USD, "100", ""},
-                {RO, CAD, USD, "100", ""}
+                {EN, CAD, USD, "", "You must enter a number."},
+                {RO, CAD, USD, "abc", "Trebuie introdus un număr."},
+                {FR, CAD, USD, "@123", "Vous devez entrer un nombre."},
+                {HU, CAD, USD, "10..0", "Meg kell adnia egy számot."},
+                {EN, CAD, USD, "+10", "You must enter a number."},
+                // Accesibility
+                {EN, CAD, USD, "10,50", "You must enter a number."},
+                {RO, CAD, USD, "10.50", "Trebuie introdus un număr."},
+                {FR, CAD, USD, "10.50", "Vous devez entrer un nombre."},
+                {HU, CAD, USD, "10.50", "Meg kell adnia egy számot."}
         };
     }
 }

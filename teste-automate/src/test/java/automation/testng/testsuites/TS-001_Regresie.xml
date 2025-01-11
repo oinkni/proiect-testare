@@ -1,10 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression testing - in Chrome">
+<suite name="Regression testing - in Chrome" verbose="5">
     <test name="Localizare aplicatie" >
         <parameter name="browser" value="Chrome" />
         <classes>
             <class name="automation.testng.testcases.TC001_Selectarea_Limbii_Interfetei"></class>
-            <class name="automation.testng.testcases.TC008_Accesibilitate"></class>
         </classes>
     </test>
     <test name="Conversii">

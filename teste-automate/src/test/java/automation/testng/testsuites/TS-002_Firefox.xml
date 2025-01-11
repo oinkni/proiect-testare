@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Compatibilitate Firefox">
+<suite name="Compatibilitate Firefox" verbose="5">
     <test name="Localizare aplicatie">
         <parameter name="browser" value="Firefox" />
         <classes>
-            <class name="automation.testng.testcases.TC008_Accesibilitate"></class>
+            <class name="automation.testng.testcases.TC001_Selectarea_Limbii_Interfetei"></class>
         </classes>
     </test>
     <test name="Conversii">
