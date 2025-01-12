@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression testing - in Chrome]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Localizare aplicatie(failed)" verbose="0">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="automation.testng.testcases.TC001_Selectarea_Limbii_Interfetei">
+        <methods>
+          <include name="TC001_Selectarea_Limbii_Interfetei" invocation-numbers="1 2"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- automation.testng.testcases.TC001_Selectarea_Limbii_Interfetei -->
+    </classes>
+  </test> <!-- Localizare aplicatie(failed) -->
+  <test thread-count="5" name="Conversii(failed)" verbose="0">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="automation.testng.testcases.TC003_Conversie_Valutara_Corecta">
+        <methods>
+          <include name="TC003_Conversie_Valutara_Corecta" invocation-numbers="0 1 2"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- automation.testng.testcases.TC003_Conversie_Valutara_Corecta -->
+      <class name="automation.testng.testcases.TC005_Conversie_Neaplicata">
+        <methods>
+          <include name="tearDown"/>
+          <include name="TC005_Conversie_Neaplicata"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- automation.testng.testcases.TC005_Conversie_Neaplicata -->
+    </classes>
+  </test> <!-- Conversii(failed) -->
+  <test thread-count="5" name="Validari(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="automation.testng.testcases.TC004_Validare_Date_Introduse">
+        <methods>
+          <include name="TC004_Validare_Date_Introduse" invocation-numbers="4 6 7 8"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- automation.testng.testcases.TC004_Validare_Date_Introduse -->
+    </classes>
+  </test> <!-- Validari(failed) -->
+</suite> <!-- Failed suite [Regression testing - in Chrome] -->

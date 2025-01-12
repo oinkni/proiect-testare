@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Compatibilitate Firefox]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Localizare aplicatie(failed)" verbose="0">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="automation.testng.testcases.TC001_Selectarea_Limbii_Interfetei">
+        <methods>
+          <include name="TC001_Selectarea_Limbii_Interfetei" invocation-numbers="1 2"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- automation.testng.testcases.TC001_Selectarea_Limbii_Interfetei -->
+    </classes>
+  </test> <!-- Localizare aplicatie(failed) -->
+</suite> <!-- Failed suite [Compatibilitate Firefox] -->

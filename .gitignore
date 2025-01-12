@@ -28,3 +28,9 @@ hs_err_pid*
 # Project output files
 target/
 /teste-automate/out/
+docs/~$ecificatii.docx
+docs/~$an Testare.docx
+docs/~$stCases.docx
+docs/docs.iml
+ProiectTestare/ProiectTestare.iml
+exemplu-surefire-reports/exemplu-surefire-reports.iml

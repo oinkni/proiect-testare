@@ -18,7 +18,7 @@ public class TC005_Conversie_Neaplicata extends BaseTest {
         mainPage.selectLanguage(language.getDisplayName());
         mainPage.convertAmount(currencyA, currencyB, amount);
 
-        assertEquals(mainPage.getResult(), expectedMessage, "Mesajul afisat nu este cel corect.");
+        assertEquals(mainPage.getErrorText(), expectedMessage, "Mesajul afisat nu este cel corect.");
     }
 
     @DataProvider(name = "languageEnumProvider")
